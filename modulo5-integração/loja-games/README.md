@@ -1,94 +1,57 @@
-# 🎮 Loja de Games API
+# API Loja de Games
 
-## Descrição do projeto
+API RESTful para gerenciar o catálogo de uma loja de games; plataformas, jogos e avaliações dos clientes.
 
-A Loja de Games API é uma aplicação desenvolvida em Python utilizando FastAPI, com o objetivo de gerenciar plataformas de jogos, jogos cadastrados e avaliações dos usuários.
-
-A API permite cadastrar, consultar, atualizar e excluir informações, facilitando o gerenciamento de uma loja de games.
+---
 
 ## Tecnologias utilizadas
+- Python 3
+- FastAPI 
+- SQLAlchemy
+- Pydantic
+- Uvicorn
 
-- **Python:** linguagem de programação utilizada no desenvolvimento.
-- **FastAPI:** framework utilizado para criação da API.
-- **Uvicorn:** servidor utilizado para executar a aplicação.
-- **SQLAlchemy:** ferramenta utilizada para comunicação com o banco de dados.
-- **Pydantic:** utilizado para validação dos dados.
-- **SQLite:** banco de dados utilizado para armazenar as informações.
-
-## Instalação e execução
-
-### 1. Clonar o repositório
-
-```bash
-git clone https://github.com/igorgalves7-cyber/DEV-SISTEMA-3BI/tree/main/modulo4-api-restful/PROVA/loja-games-api
+---
+## Como instalar e executar
+1. Clone o repositório e entre na pasta do projeto:
 ```
-
-### 2. Entrar na pasta do projeto
-
-```bash
-cd loja-games-api
+git clone https://github.com/MMVonnSeek/dev-sistemas.git
+cd loja-games
 ```
-
-### 3. Criar um ambiente virtual
-
-```bash
+2. Crie e ative o ambiente virtual (venv)
+```
 python -m venv venv
+source venv/Scripts/activate
 ```
 
-### 4. Ativar o ambiente virtual
-
-No Windows:
-
-```bash
-venv\Scripts\activate
+3. Instale as dependências:
+```
+pip install fastapi uvicorn sqlalchemy
 ```
 
-### 5. Instalar as dependências
-
-```bash
-pip install -r requirements.txt
+4. Execute o servidor:
 ```
-
-### 6. Executar a API
-
-```bash
 uvicorn main:app --reload
 ```
 
-Após iniciar, acesse:
+5. Acesse a documentação interativa (Swagger) em: http://127.0.0.1:8000/docs
 
-- API: http://127.0.0.1:8000
-- Documentação interativa: http://127.0.0.1:8000/docs
-
+---
 ## Rotas da API
+| Método | Rotas | O que faz |
+| --- | --- |---|
+|GET | `/plataforma/` | Lista todas as plataformas |
+| POST | `/plataforma` | Cadastra uma nova plataforma |
+| GET | `/jogos/` | Lista todos os jogos |
+| GET | `/jogos{id}` | Busca um jogo pelo ID |
+| POST | `/jogos/` | Cadastra um novo jogo |
+| PUT | `/jogos{id}/` | Atualiza os dados de um jogo |
+| DELETE | `/jogos{id}/` | Remove um jogo |
+| GET | `/Jogos/{id}/avaliacoes` | Lista as avaliações de um jogo |
+| POST | `/avaliacoes/` | Registra uma avaliação |
+| DELETE | `/avaliacoes/{id}/` | Remove uma avaliação |
 
-### Plataformas
-
-| Método | Rota | Descrição |
-|---|---|---|
-| GET | `/plataformas/` | Lista todas as plataformas cadastradas. |
-| POST | `/plataformas/` | Cadastra uma nova plataforma. |
-
-### Jogos
-
-| Método | Rota | Descrição |
-|---|---|---|
-| GET | `/jogos/` | Lista todos os jogos. |
-| GET | `/jogos/{id}` | Busca um jogo pelo ID. |
-| POST | `/jogos/` | Cadastra um novo jogo. |
-| PUT | `/jogos/{id}` | Atualiza os dados de um jogo. |
-| DELETE | `/jogos/{id}` | Remove um jogo. |
-| GET | `/jogos/{id}/avaliacoes` | Lista as avaliações de um jogo. |
-
-### Avaliações
-
-| Método | Rota | Descrição |
-|---|---|---|
-| POST | `/avaliacoes/` | Registra uma avaliação para um jogo. |
-| DELETE | `/avaliacoes/{id}` | Remove uma avaliação pelo ID. |
+---
 
 ## Autor
-
-**Igor Gabriel**
-
-Projeto desenvolvido como parte do projeto final do Módulo 4.
+Max Muller - Desenvolvimento de Sistemas - SENAI - DF
