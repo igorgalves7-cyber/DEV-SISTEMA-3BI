@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game District | Cadastrar Jogos</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #eeeeea;
+            color: #171717;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #171717;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 27px;
+            font-weight: 900;
+        }
+
+        .logo span {
+            color: #f5d323;
+        }
+
+        nav {
+            display: flex;
+            gap: 12px;
+        }
+
+        nav a {
+            color: #f5d323;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            padding: 11px 15px;
+            border-radius: 5px;
+            transition: .3s;
+        }
+
+        nav a:hover,
+        nav a.ativo {
+            background: #f5d323;
+            color: #171717;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 55px auto;
+            padding: 0 25px;
+        }
+
+        .titulo {
+            margin-bottom: 30px;
+        }
+
+        .titulo small {
+            color: #a28b00;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin: 10px 0;
+            text-transform: uppercase;
+        }
+
+        .titulo p {
+            color: #777;
+        }
+
+        .conteudo {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 22px;
+        }
+
+        .formulario {
+            background: white;
+            padding: 35px;
+            border-radius: 6px;
+            border-top: 5px solid #f5d323;
+        }
+
+        h2 {
+            margin-bottom: 8px;
+        }
+
+        .descricao {
+            color: #888;
+            font-size: 13px;
+            margin-bottom: 28px;
+        }
+
+        .campo {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 9px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f8f8f5;
+            font-size: 14px;
+            outline: none;
+        }
+
+        input:focus, select:focus {
+            border-color: #d3b400;
+        }
+
+        .linha {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        button {
+            width: 100%;
+            padding: 16px;
+            background: #f5d323;
+            color: #171717;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        button:hover {
+            background: #171717;
+            color: #f5d323;
+        }
+
+        .lateral {
+            background: #171717;
+            color: white;
+            padding: 28px;
+            border-radius: 6px;
+        }
+
+        .lateral small {
+            color: #f5d323;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        .lateral h2 {
+            font-size: 35px;
+            margin-top: 25px;
+            line-height: 1.1;
+        }
+
+        .lateral h2 span {
+            color: #f5d323;
+        }
+
+        .lateral p {
+            color: #aaa;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #999;
+            font-size: 12px;
+        }
+
+        @media(max-width: 750px) {
+            header {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .conteudo {
+                grid-template-columns: 1fr;
+            }
+
+            .linha {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">GAME<span>DISTRICT.</span></div>
+
+        <nav>
+            <a href="cadastrar_jogos.html" class="ativo">Cadastrar Jogos</a>
+            <a href="cadastrar_plataforma.html">Cadastrar Plataformas</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="titulo">
+            <small>CATÁLOGO / PRODUTOS</small>
+            <h1>Cadastrar Jogo.</h1>
+            <p>Adicione novos títulos ao catálogo da sua loja.</p>
+        </section>
+
+        <section class="conteudo">
+
+            <div class="formulario">
+                <h2>Informações do produto</h2>
+                <p class="descricao">Preencha os dados do jogo abaixo.</p>
+
+                <form>
+
+                    <div class="campo">
+                        <label for="titulo">Nome do jogo</label>
+                        <input type="text" id="titulo"
+                            placeholder="Ex: GTA VI" required>
+                    </div>
+
+                    <div class="linha">
+
+                        <div class="campo">
+                            <label for="genero">Gênero</label>
+                            <input type="text" id="genero"
+                                placeholder="Ex: Ação" required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="preco">Preço (R$)</label>
+                            <input type="number" id="preco"
+                                placeholder="0.00" min="0"
+                                step="0.01" required>
+                        </div>
+
+                    </div>
+
+                    <div class="campo">
+                        <label for="plataforma">Plataforma</label>
+                        <select id="plataforma" required>
+                            <option value="">Selecione uma plataforma</option>
+                            <option value="1">PlayStation 5</option>
+                            <option value="2">Xbox Series X</option>
+                            <option value="3">PC</option>
+                        </select>
+                    </div>
+
+                    <button type="submit">+ Cadastrar Jogo</button>
+
+                </form>
+            </div>
+
+            <aside class="lateral">
+                <small>GAME DISTRICT / 2026</small>
+
+                <h2>SEU PRÓXIMO GRANDE <span>LANÇAMENTO.</span></h2>
+
+                <p>
+                    Organize seu catálogo, cadastre novos títulos
+                    e mantenha sua loja sempre atualizada.
+                </p>
+            </aside>
+
+        </section>
+
+    </main>
+
+    <footer>
+        GAME DISTRICT © 2026 — TODOS OS DIREITOS RESERVADOS
+    </footer>
+
+</body>
+</html>
