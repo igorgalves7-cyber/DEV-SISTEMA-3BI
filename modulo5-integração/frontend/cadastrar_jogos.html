@@ -34,6 +34,11 @@
             font-weight: 900;
         }
 
+        .logo a {
+            color: white;
+            text-decoration: none;
+        }
+
         .logo span {
             color: #f5d323;
         }
@@ -194,10 +199,15 @@
             font-size: 12px;
         }
 
-        @media(max-width: 750px) {
+        @media (max-width: 750px) {
             header {
                 flex-direction: column;
                 gap: 18px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
             .conteudo {
@@ -219,11 +229,18 @@
 <body>
 
     <header>
-        <div class="logo">GAME<span>DISTRICT.</span></div>
+        <div class="logo">
+            <a href="index.html">GAME<span>DISTRICT.</span></a>
+        </div>
 
         <nav>
+            <a href="index.html">Início</a>
+
             <a href="cadastrar_jogos.html" class="ativo">Cadastrar Jogos</a>
+
             <a href="cadastrar_plataforma.html">Cadastrar Plataformas</a>
+
+            <a href="avaliar_jogo.html">Avaliar Jogos</a>
         </nav>
     </header>
 

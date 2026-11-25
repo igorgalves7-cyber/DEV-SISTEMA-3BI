@@ -1,0 +1,379 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliar Jogo | Game District</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #eeede9;
+            color: #181818;
+        }
+
+        header {
+            background-color: #181818;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #f8d52e;
+        }
+
+        nav a {
+            color: #f8d52e;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        nav a:last-child {
+            background-color: #f8d52e;
+            color: black;
+            padding: 12px 16px;
+            border-radius: 5px;
+        }
+
+        main {
+            max-width: 960px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .subtitulo {
+            color: #b79500;
+            font-size: 12px;
+            letter-spacing: 4px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .descricao {
+            color: #777;
+            font-size: 15px;
+            margin-bottom: 27px;
+        }
+
+        .conteudo {
+            display: flex;
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .formulario {
+            background-color: white;
+            border-top: 5px solid #f8d52e;
+            border-radius: 6px;
+            padding: 32px;
+            flex: 1;
+            min-height: 315px;
+        }
+
+        .formulario h2 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .formulario p {
+            color: #888;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 9px;
+        }
+
+        textarea, input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f8f8f6;
+            font-size: 14px;
+            outline: none;
+        }
+
+        textarea {
+            height: 95px;
+            resize: vertical;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #f8d52e;
+        }
+
+        .campo {
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f8d52e;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        button:hover {
+            background-color: #eac719;
+        }
+
+        #erro {
+            color: #d62828;
+            font-size: 13px;
+            margin-top: 15px;
+        }
+
+        #sucesso {
+            color: #218838;
+            font-size: 13px;
+            margin-top: 15px;
+        }
+
+        .painel {
+            background-color: #181818;
+            color: white;
+            width: 275px;
+            padding: 27px;
+            border-radius: 6px;
+        }
+
+        .painel small {
+            color: #f8d52e;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .painel h2 {
+            font-size: 32px;
+            margin: 23px 0;
+            line-height: 1.1;
+        }
+
+        .painel h2 span {
+            color: #f8d52e;
+        }
+
+        .painel p {
+            color: #bbb;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        footer {
+            text-align: center;
+            color: #999;
+            font-size: 11px;
+            margin-top: 70px;
+            padding-bottom: 30px;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                padding: 20px;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 5px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .conteudo {
+                flex-direction: column;
+            }
+
+            .painel {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html">GAME<span>DISTRICT.</span></a>
+        </div>
+
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="cadastrar_jogos.html">Cadastrar Jogos</a>
+            <a href="cadastrar_plataforma.html">Cadastrar Plataformas</a>
+            <a href="avaliar_jogo.html">Avaliar Jogos</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="subtitulo">CATÁLOGO / AVALIAÇÕES</div>
+
+        <h1>AVALIAR JOGO.</h1>
+
+        <div class="descricao">
+            Compartilhe sua opinião e avalie seus jogos favoritos.
+        </div>
+
+        <div class="conteudo">
+
+            <section class="formulario">
+
+                <h2>Informações da avaliação</h2>
+
+                <p>Preencha os campos abaixo para registrar sua avaliação.</p>
+
+                <form id="formAvaliacao">
+
+                    <div class="campo">
+                        <label for="comentario">Comentário</label>
+
+                        <textarea
+                            id="comentario"
+                            placeholder="Escreva sua opinião sobre o jogo..."
+                        ></textarea>
+                    </div>
+
+                    <div class="campo">
+                        <label for="nota">Nota (1 a 5)</label>
+
+                        <input
+                            type="number"
+                            id="nota"
+                            min="1"
+                            max="5"
+                            placeholder="Ex: 5"
+                        >
+                    </div>
+
+                    <button type="submit">+ Enviar Avaliação</button>
+
+                    <p id="erro"></p>
+                    <p id="sucesso"></p>
+
+                </form>
+
+            </section>
+
+            <aside class="painel">
+
+                <small>GAME DISTRICT / 2026</small>
+
+                <h2>
+                    SUA OPINIÃO,
+                    <span>SUA AVALIAÇÃO.</span>
+                </h2>
+
+                <p>
+                    Avalie seus jogos favoritos e compartilhe
+                    sua experiência com outros jogadores
+                    da nossa comunidade.
+                </p>
+
+            </aside>
+
+        </div>
+
+        <footer>
+            GAME DISTRICT © 2026 — TODOS OS DIREITOS RESERVADOS
+        </footer>
+
+    </main>
+
+    <script>
+
+        const formulario = document.getElementById("formAvaliacao");
+
+        formulario.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const comentario = document.getElementById("comentario").value;
+            const notaTexto = document.getElementById("nota").value;
+            const nota = Number(notaTexto);
+
+            const erro = document.getElementById("erro");
+            const sucesso = document.getElementById("sucesso");
+
+            erro.innerHTML = "";
+            sucesso.innerHTML = "";
+
+            let mensagemErro = "";
+
+            if (comentario.trim() === "") {
+                mensagemErro += "O comentário não pode estar vazio. ";
+            }
+
+            if (
+                notaTexto === "" ||
+                !Number.isInteger(nota) ||
+                nota < 1 ||
+                nota > 5
+            ) {
+                mensagemErro += "A nota deve ser um número inteiro entre 1 e 5.";
+            }
+
+            if (mensagemErro !== "") {
+                erro.innerHTML = mensagemErro;
+                return;
+            }
+
+            console.log({
+                comentario: comentario,
+                nota: nota
+            });
+
+            sucesso.innerHTML = "Avaliação enviada com sucesso!";
+
+        });
+
+    </script>
+
+</body>
+</html>
